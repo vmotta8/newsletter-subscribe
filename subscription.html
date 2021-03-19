@@ -1,3 +1,5 @@
+<!-- https://github.com/codingmarket07/Newsletter -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,13 +92,22 @@ body{
 
 <div class="wrapper">
 	<h1>Subscribe to our Newsletter</h1>
-	<p>Receive news instanly</p>
+	<p>Receive news instantly</p>
 	<div class="newsletter">
-		<input type="text" class="input" placeholder="Enter Your Email">
+		<input type="text" class="input" placeholder="Enter Your Email" id="inputId">
 		<i class="fas fa-envelope"></i>
-		<div class="btn">Subscribe</div>
+		<div >
+			<button class="btn" id="myButton">Subscribe</button>
+		</div>
 	</div>
 </div>	
-	
+
+<script type="text/javascript">
+	document.getElementById("myButton").onclick = function () {
+		const email = document.getElementById("inputId").value
+		location.href = `https://e0v7152962.execute-api.eu-west-1.amazonaws.com/dev/subscribe/${email}`;
+	};
+</script>
+
 </body>
 </html>
